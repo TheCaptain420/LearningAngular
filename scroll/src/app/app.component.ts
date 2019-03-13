@@ -11,6 +11,7 @@ artists:object;
 
   showArtist( item){
     this.query = item.name; 
+    item.highlight = !item.highlight;
   }
 
   constructor(){

@@ -16,7 +16,8 @@
           <strong>For:</strong>
           {{  query  }}
         </div>
-        <input class="form-control mt-2" type="text">
+        <input class="form-control mt-2" type="text"
+        [(ngModel)]="query">
       </div><!-- form-group -->
     </div><!-- card-body -->
   </div><!-- card -->
@@ -28,8 +29,13 @@
         <div class="list-group">
           <a href="#" class="list-group-item list-group-item-action flex-column align-items-start" 
           *ngFor="let artist of artists"
-          (click)= "showArtist(artist)">
+          (click)= "showArtist(artist)"
+          [style.backgroundColor]="artist.highlight ? '#EEE' : '#FFF'">
               <div class="media">
+                <img class="mr-3 rounded align-self-center img-fluid" style="width: 70px;" 
+                src="./assets/images/index.jpeg" alt="">
+                <!-- Når man skal loope kan src se sådan her ud : -->
+                <!--src="{{'.assets/images/'+ artist.shortname + '_tn.jpg'}}" -->
                 <div class="media-body align-self-center">
                   <h5 class="m-0"> {{ artist.name }}</h5>
                   {{ artist.reknown }}
