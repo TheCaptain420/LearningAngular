@@ -22,7 +22,10 @@ currentArtist: object;
 
   ngOnInit():void {
     //()=location
-    this.http.get<Object>('./assets/data.json').subscribe(data => {
+    //http://35.198.82.252/daniels
+    //this.http.get<Object>('./assets/data.json').subscribe(data => {
+    this.http.get<Object>('http://35.198.82.252/daniels').subscribe(data => {
+      console.log(data);
       this.artists =data; 
     })
 
